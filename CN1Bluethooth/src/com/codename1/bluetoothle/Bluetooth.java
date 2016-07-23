@@ -78,11 +78,19 @@ public class Bluetooth {
         return false;
     }
 
+    /**
+     * Not supported by iOS.  With throw an IOException if called on iOS.
+     * @throws IOException 
+     */
     public void enable() throws IOException {
         CordovaCallback callack = new CordovaCallback();
         plugin.execute("enable", "", callack);
     }
 
+    /**
+     * Not supported by iOS.  With throw an IOException if called on iOS.
+     * @throws IOException 
+     */
     public void disable() throws IOException {
         CordovaCallback callack = new CordovaCallback();
         plugin.execute("disable", "", callack);
@@ -165,6 +173,12 @@ public class Bluetooth {
         plugin.execute("close", j.toString(), callack);
     }
 
+    /**
+     * Not currently supported on iOS.  Currently does nothing if called on iOS.
+     * @param callback
+     * @param address
+     * @throws IOException 
+     */
     public void discover(ActionListener callback, String address) throws IOException {
         HashMap p = new HashMap();
         p.put("address", address);
@@ -324,6 +338,13 @@ public class Bluetooth {
         plugin.execute("rssi", j.toString(), callack);
     }
 
+    /**
+     * Not supported by iOS.  With throw an IOException if called on iOS.
+     * @param callback
+     * @param address
+     * @param mtu
+     * @throws IOException 
+     */
     public void mtu(ActionListener callback, String address, int mtu) throws IOException {
         HashMap p = new HashMap();
         p.put("address", address);
@@ -335,6 +356,14 @@ public class Bluetooth {
         plugin.execute("mtu", j.toString(), callack);
     }
 
+    /**
+     * Not supported by iOS.  With throw an IOException if called on iOS.
+     * 
+     * @param callback
+     * @param address
+     * @param priority
+     * @throws IOException 
+     */
     public void requestConnectionPriority(ActionListener callback, String address, int priority) throws IOException {
         HashMap p = new HashMap();
         p.put("address", address);
@@ -430,6 +459,11 @@ public class Bluetooth {
         return false;
     }
 
+    /**
+     * Not supported on iOS.  Will throw IOException if called on iOS.
+     * @return
+     * @throws IOException 
+     */
     public boolean hasPermission() throws IOException {
 
         CordovaCallback callack = new CordovaCallback();
@@ -442,6 +476,11 @@ public class Bluetooth {
         return false;
     }
 
+    /**
+     * Not supported on iOS.  Will throw IOException if called on iOS.
+     * @return
+     * @throws IOException 
+     */
     public boolean requestPermission() throws IOException {
 
         CordovaCallback callack = new CordovaCallback();
@@ -454,6 +493,11 @@ public class Bluetooth {
         return false;
     }
 
+    /**
+     * Not supported on iOS. Will throw IOException if called on iOS.
+     * @return
+     * @throws IOException 
+     */
     public boolean isLocationEnabled() throws IOException {
 
         CordovaCallback callack = new CordovaCallback();
@@ -466,6 +510,11 @@ public class Bluetooth {
         return false;
     }
 
+    /**
+     * Not supported on iOS. Will throw IOException if called on iOS.
+     * @return
+     * @throws IOException 
+     */
     public boolean requestLocation() throws IOException {
 
         CordovaCallback callack = new CordovaCallback();
