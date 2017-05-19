@@ -50,7 +50,7 @@ public class Bluetooth {
 
     public static final int CONNECTION_PRIORITY_HIGH = 2;
 
-    private Cordova plugin;
+    protected Cordova plugin;
 
     public Bluetooth() {
         plugin = new Cordova();
@@ -157,7 +157,6 @@ public class Bluetooth {
         HashMap p = new HashMap();
         p.put("address", address);
         JSONObject j = new JSONObject(p);
-
         CordovaCallback callack = new CordovaCallback();
         plugin.execute("disconnect", j.toString(), callack);
     }
@@ -525,4 +524,5 @@ public class Bluetooth {
         return false;
     }
 
+    
 }
