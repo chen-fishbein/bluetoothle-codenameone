@@ -49,7 +49,7 @@ public class CordovaPlugin implements LifecycleListener {
     public boolean hasPermission(String permission) {
         return android.support.v4.content.ContextCompat.checkSelfPermission(getActivity(),
                 permission)
-                != PackageManager.PERMISSION_GRANTED;
+                == PackageManager.PERMISSION_GRANTED;
     }
 
     public void requestPermission(CordovaPlugin ins, int req, String permission) {
