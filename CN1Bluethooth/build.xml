@@ -50,14 +50,12 @@
 
     <target name="Stubs">
         <delete dir="build/stubs"/>
-        <javadoc sourcepath="src"
-            classpath="lib/CodenameOne.jar:lib/CLDC11.jar"
-            docletpath="Stubber.jar"
-            doclet="com.codename1.build.client.StubGenerator"> 
-            <fileset dir="${src.dir}" excludes="*.java,${excludes}" includes="${includes}">
+         <mkdir dir="build/stubs" />
+         <copy todir="build/stubs">
+             <fileset dir="${src.dir}">
                 <filename name="**/*.java"/>
-            </fileset>
-         </javadoc>
+             </fileset>
+         </copy>
     </target>
 
     <target name="jar" depends="compile,Stubs">
